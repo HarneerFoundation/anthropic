@@ -1,0 +1,33 @@
+# AI Studio — Vercel Deployment
+
+## Structure
+```
+ai-studio/
+├── api/
+│   └── chat.js        ← Server-side proxy (keeps API key secret)
+├── public/
+│   └── index.html     ← Frontend UI
+└── vercel.json        ← Routing config
+```
+
+## Deploy to Vercel
+
+### Step 1 — Push to GitHub
+1. Create a new GitHub repo
+2. Upload this entire `ai-studio` folder (all 3 files + the api folder)
+3. Make sure the structure matches exactly above
+
+### Step 2 — Deploy on Vercel
+1. Go to vercel.com → Add New Project → Import your repo
+2. Leave all build settings as default
+3. Click **Deploy**
+
+### Step 3 — Add your API Key (CRITICAL)
+1. In Vercel → your project → **Settings → Environment Variables**
+2. Add:
+   - **Name:** `ANTHROPIC_API_KEY`
+   - **Value:** your key from console.anthropic.com
+3. Click **Save**
+4. Go to **Deployments** → click the 3 dots → **Redeploy**
+
+Your API key stays secret on the server — never exposed to the browser.
