@@ -1,0 +1,31 @@
+# AI Studio — Powered by Gemini (Free!)
+
+## Structure
+```
+ai-studio/
+├── api/chat.js        ← Server proxy (keeps API key secret)
+├── public/index.html  ← Frontend UI
+└── vercel.json        ← Routing config
+```
+
+## Step 1 — Get FREE Gemini API Key
+1. Go to https://aistudio.google.com
+2. Click "Get API Key" → "Create API key"
+3. Copy the key — free, no credit card needed
+
+## Step 2 — Push to GitHub
+Upload ALL files keeping exact folder structure above.
+
+## Step 3 — Deploy on Vercel
+Import your GitHub repo → leave settings default → Deploy.
+
+## Step 4 — Add API Key in Vercel
+Settings → Environment Variables → Add:
+  Name:  GEMINI_API_KEY
+  Value: your key from aistudio.google.com
+Then redeploy.
+
+## Free Limits
+- 15 requests/minute
+- 1 million tokens/day
+- No credit card required
